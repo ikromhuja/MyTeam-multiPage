@@ -1,0 +1,197 @@
+@use "../abstracts" as *;
+@use "../base/global" as *;
+
+.contact-page {
+  padding: 1.5rem;
+  background-color: $color-midnight-green;
+  background-image: url(../assets/bg-pattern-contact-2.svg);
+  background-repeat: no-repeat;
+  bottom: 0;
+  background-position: bottom -100px right -110px;
+
+  @media only screen and (min-width: $bp-tablet) {
+    padding-top: 5rem;
+    background-image: url(../assets/bg-pattern-contact-2.svg),
+      url(../assets/bg-pattern-about-2-contact-1.svg);
+    background-position: bottom -100px right -110px, top 70px left -100px;
+  }
+
+  @media only screen and (min-width: $bp-desktop) {
+    padding-bottom: 8rem;
+    background-position: bottom -0px right -105px, top 70px left -100px;
+           }
+
+  &__inner-content {
+    @media only screen and (min-width: $bp-desktop) {
+      display: flex;
+      gap: 5rem;
+      justify-content: center;
+      max-width: 70rem;
+      margin: 0 auto;
+    }
+  }
+
+ 
+}
+// LEFT CONTENT
+.left-content {
+
+  @media only screen and (min-width: $bp-desktop) {
+    
+    margin: 0;
+      }
+  &__headings-container {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 3rem;
+    gap: 1rem;
+
+    @media only screen and (min-width: $bp-desktop) {
+      text-align: left;
+      margin-left: 0rem;
+             }
+
+    
+  }
+
+  &__heading {
+    margin: 0;
+    font-size: 2.5rem;
+    color: $color-white;
+
+    @media only screen and (min-width: $bp-tablet) {
+      font-size: 4rem;
+    }
+
+    @media only screen and (min-width: $bp-desktop) {
+      margin-bottom: 1rem;
+             }
+  }
+
+  &__description {
+    font-size: 2rem;
+    font-weight: 700;
+    color: $color-light-coral;
+  }
+}
+
+.icons-container {
+  display: grid;
+  grid-template-columns: 4.5rem auto;
+  grid-template-rows: repeat(3, 1fr);
+  column-gap: 1.44em;
+  row-gap: 1.5rem;
+  justify-content: center;
+
+  &__icon {
+  }
+
+  &__text {
+    font-size: 1.125rem;
+    color: $color-white;
+    align-self: center;
+    max-width: 14.5rem;
+    line-height: 1.75em;
+
+    @media only screen and (min-width: $bp-tablet) {
+      max-width: 22.5rem;
+    }
+  }
+}
+
+// RIGHT-CONTENT
+.right-content {
+  margin-top: 4rem;
+  margin-bottom: 5.5rem;
+
+  @media only screen and (min-width: $bp-desktop) {
+    
+    width: 40%;
+    margin: 0;
+           }
+}
+
+// FORM
+.form {
+  @media only screen and (min-width: $bp-tablet) {
+    max-width: 33.75rem;
+    margin: 0 auto;
+  }
+}
+
+textarea {
+  padding: 1.5rem 0 0 1rem;
+  resize: none;
+}
+
+input {
+  padding: 1rem;
+}
+
+input,
+textarea {
+  width: 100%;
+  background-color: transparent;
+  border-bottom-color: rgb(255, 255, 255, 0.5);
+  border-top: 0;
+  border-left: 0;
+  border-right: 0;
+  color: $color-white;
+  font-size: 0.9375rem;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 1.5625rem;
+  letter-spacing: -0.00719rem;
+}
+
+.btn-submit {
+  margin-top: 1.5rem;
+  width: 7rem;
+  background-color: $color-white;
+  color: $color-sacramento-state-green;
+  padding: 1rem;
+  border-radius: 1.5rem;
+  border: 0;
+  cursor: pointer;
+  
+
+  @media only screen and (min-width: $bp-desktop) {
+    @include transition;
+    margin-top: 1rem;
+
+    &:hover {
+      color: $color-white;
+      background-color: $color-rapture-blue;
+      scale: 1.1;
+    }
+  }
+}
+
+// FORM CONTROLS
+
+small {
+  color: $color-light-coral;
+  font-size: 0.625rem;
+  margin-top: 0.5rem;
+  margin-left: 1rem;
+  font-style: italic;
+}
+
+.form-control.success input {
+  border-color: $color-rapture-blue;
+}
+
+.form-control.error input {
+  border-color: $color-light-coral;
+  color: $color-light-coral;
+}
+
+.form-control.error textarea {
+  border-color: $color-light-coral;
+  color: $color-light-coral;
+}
+
+.form-control.success textarea {
+  border-color: $color-rapture-blue;
+}

@@ -1,0 +1,173 @@
+@use "../abstracts" as *;
+@use "../base/global" as *;
+
+.staff {
+  background: $color-sacramento-state-green;
+  background-image: url(../assets/bg-pattern-about-2-contact-1.svg),
+    url(../assets/bg-pattern-home-4-about-3.svg);
+  background-repeat: no-repeat, no-repeat;
+  background-position: -90px -100px, bottom right;
+
+  @media only screen and (min-width: $bp-tablet) {
+    background-position: -60px 0, bottom right;
+  }
+
+  &__content {
+    padding: 1.5rem;
+    position: relative;
+  }
+
+  &__heading {
+    font-size: 2rem;
+    color: $color-white;
+    text-align: center;
+    margin: 5.5rem 0 3rem 0;
+
+    @media only screen and (min-width: $bp-desktop) {
+      font-size: 3rem;
+    }
+  }
+
+  &__boxes-container {
+    display: flex;
+    flex-direction: column;
+    gap: 3.25rem;
+
+    @media only screen and (min-width: $bp-tablet) {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 4.75rem 1rem;
+      max-width: 35rem;
+      margin: 0 auto;
+    }
+
+    @media only screen and (min-width: $bp-desktop) {
+      grid-template-columns: repeat(3, 1fr);
+      grid-template-rows: repeat(2, 1fr);
+      max-width: 65rem;
+      gap: 4.75rem 1.87rem;
+      margin-bottom: 8.75rem;
+    }
+  }
+}
+
+.box {
+  padding: 2rem 1rem;
+  height: 15rem;
+  background-color: $color-very-dark-green;
+  text-align: center;
+
+  @media only screen and (min-width: $bp-desktop) {
+    width: 21rem;
+  }
+
+  &__inner-content {
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    max-width: 15rem;
+    margin: 0 auto;
+
+    @media only screen and (min-width: $bp-tablet) {
+      width: 17rem;
+      max-width: none;
+    }
+  }
+
+  &__avatar {
+    width: 6rem;
+    height: 6rem;
+    border-radius: 50%;
+    border: 2px solid $color-rapture-blue;
+    margin-bottom: 1rem;
+  }
+
+  &__name {
+    font-size: 1.125rem;
+    color: $color-rapture-blue;
+    margin-bottom: 0.3rem;
+  }
+
+  &__title {
+    font-style: italic;
+    color: $color-white;
+  }
+
+  &__cross {
+    position: absolute;
+    bottom: -80px;
+    width: 3.5rem;
+    height: 3.5rem;
+    border: 2px solid $color-light-coral;
+    border-radius: 50%;
+    background-color: $color-light-coral;
+    padding: 1.1rem;
+    cursor: pointer;
+
+    @media only screen and (min-width: $bp-desktop) {
+      @include transition;
+    }
+
+    &:hover {
+      @media only screen and (min-width: $bp-desktop) {
+        background-color: $color-rapture-blue;
+        border-color: $color-rapture-blue;
+      }
+    }
+  }
+
+  &__quote {
+    color: $color-white;
+    line-height: 1.5625rem;
+  }
+
+  &__social-container {
+    display: flex;
+    gap: 1rem;
+    margin-top: 1rem;
+  }
+
+  &__cross.aqua {
+    background-color: $color-rapture-blue;
+    border: 0;
+    padding: 1.3rem;
+
+    @media only screen and (min-width: $bp-tablet) {
+      bottom: -100px;
+    }
+
+    &:hover {
+      @media only screen and (min-width: $bp-desktop) {
+        background-color: $color-light-coral;
+        border-color: $color-light-coral;
+      }
+    }
+  }
+}
+
+// Queries
+@media only screen and (min-width: $bp-tablet) {
+  div.box:nth-child(5) {
+    grid-column: 2;
+  }
+}
+
+.box.quote-box {
+  margin-bottom: 7.25rem;
+  background-color: $color-dark-green;
+
+  @media only screen and (min-width: $bp-tablet) {
+    grid-column: 1;
+    grid-row: 3;
+  }
+
+  @media only screen and (min-width: $bp-desktop) {
+    grid-column: 3;
+    grid-row: 2;
+    margin-bottom: 0;
+  }
+}

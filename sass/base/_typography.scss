@@ -1,0 +1,55 @@
+@use "../abstracts" as *;
+
+@import url('https://fonts.googleapis.com/css2?family=Livvic:wght@600;700&display=swap');
+
+
+$font: "Livvic", sans-serif;
+$font-size: 1.125rem;
+
+
+
+h1,
+h2,
+h3,
+h4 {
+  font-family: $font;
+ 
+}
+
+.h1-large {
+  font-size: 6.25rem;
+  line-height: 100px;
+}
+
+.h1-small {
+  font-size: 4rem;
+  line-height: 56;
+}
+
+h2 {
+  font-size: 3rem;
+  line-height: 48px;
+}
+
+h3 {
+  font-size: 1.125rem;
+  line-height: 28px;
+}
+
+.body1,
+.body2{
+  font-family: $font;
+}
+
+.body1{
+  
+  font-size: 1.125rem;
+  line-height: 28px;
+}
+
+.body2{
+  
+  font-size: 0.938rem;
+  line-height: 25px;
+}
+
